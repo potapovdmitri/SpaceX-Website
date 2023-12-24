@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "codegen.config.ts", "src/components/apollo/graphql.ts", "codegen.ts"  ]
 }

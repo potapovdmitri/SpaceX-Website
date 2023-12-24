@@ -1,0 +1,40 @@
+.swiper {
+  overflow: visible;
+  overflow-x: clip;
+}
+.bullet-wrapper{
+  width: 100%;
+  margin-top: 40px;
+}
+.bullet-block {
+  height: 24px;
+}
+.pagination-bullet {
+  display: flex;
+  justify-content: center;
+}
+.swiper-pagination-bullet {
+  --s: 24px; /* control the size */  
+--c: #000; /* the active color */
+
+height: var(--s);
+width: var(--s);
+margin: 4px;
+aspect-ratio: 1;
+border: calc(var(--s)/20) solid #000; 
+padding: calc(var(--s)/4.7);
+background: 
+   radial-gradient(farthest-side,var(--c) 94%,#00000000) 
+   50%/0 0 no-repeat content-box;
+border-radius: 50%;
+outline-offset: calc(var(--s)/10);
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+cursor: pointer;
+transition: .3s;
+}
+.swiper-pagination-bullet-active {
+  border-color: var(--c);
+  background-size: 100% 100%;
+}

@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: "Lato-Light";
+    src: url(/public/fonts/Lato-Light.ttf);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "Lato-Medium";
+    src: url(/public/fonts/Lato-Medium.ttf);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+    font-family: "Lato-Light";
+    src: url(/public/fonts/Lato-Light.ttf);
+}
+.linkToPage{
+    height: 53px;
+}
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
   }
+.linkToPage :hover{
+    --angle: 0deg;
+    height: 51px;
+    border: 2px solid;
+    border-image: linear-gradient(var(--angle), rgb(0, 213, 255), rgb(255, 255, 255)) 1;
+	animation: 2s rotate linear infinite ;
+}
+.favorite-card-btn {
+    height: 53px;
+    border: 0;
+}
+.favorite-card-btn :hover{
+    margin: 0;
+    padding: 0;
+    --angle: 0deg;
+    height: 53px;
+    border: 2px solid;
+    border-image: linear-gradient(var(--angle), rgb(0, 213, 255), rgb(255, 255, 255)) 1;
+	animation: 2s rotate linear infinite ;
+    cursor: pointer;
+}
+.favorite-card-btn :active {
+    border: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cover {
+    max-width: 100%;
+    width: 1440px;
+    height: 740px;
+    background: rgba(0,0,0,0.48);
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
 }
 
-.App-link {
-  color: #61dafb;
+.slides {
+    display: flex;
+    height: 100%;
+    width: 500%;
+    margin-top: -80px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slides input {
+    display: none;
+}
+
+.slide {
+    position: relative;
+    z-index: 3;
+    width: 20%;
+    transition: 2s;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+.arrow-btn {
+    height: 47px;
 }
